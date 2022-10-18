@@ -1,0 +1,120 @@
+#logo{
+    width: 475px;
+    animation: load 5s;
+}
+
+@keyframes load{
+    from {width: 25px;
+    opacity: 0%;}
+    to {width: 475px;
+    opacity: 100%;}
+}
+
+body{
+    font-family: poppins, sans-serif, serif;
+    background-color: #f1f1f1;
+    background-image: url("../images/concrete_seamless.png");
+}
+
+header{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+li:visited{
+    color: inherit;
+}
+
+.card{
+    border-top-left-radius: 50px;
+    border-top-right-radius: 50px;
+    display: flex;
+    flex-direction: column;
+    flex-wrap: nowrap;
+    flex-basis: 450px;
+}
+/* Still need to left-align the headers of the cards. The numbers have been resolved but still need to move the box titles */
+.card>header{
+    background-color: #288088;
+    border: #45ADAD solid 2px;
+    padding: 20px 0px;
+    border-top-left-radius: 50px;
+    border-top-right-radius: 50px;
+}
+
+.pricing{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+}
+
+.gallery{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: stretch;
+}
+
+.gallery img{
+    border: solid 10px #50C7C7;
+    margin: 10px;
+    width: 300px;
+}
+
+@media screen and (min-width: 900px){
+    body > header{
+        position: sticky;
+        width: 100%;
+        top: 0px;
+        z-index: 1;
+    }
+
+    header{
+        flex-direction: row;
+        justify-content: space-between;
+    }
+    .nav_links{
+        display: flex;
+        flex-direction: row;
+    }
+    .pricing, .card{
+        size: 275px;
+        flex-wrap: nowrap;
+    }
+    
+}
+
+@media print{
+    body{
+        font-family: Arial, Helvetica;
+        background-image: none;   
+    }
+    .nav_links{
+        display: flex;
+    }
+
+    .card{
+        flex-basis: 325px;
+        border: #45ADDD solid 2px;
+    }
+
+    .card>ul>li:nth-child(2)::after{
+        content: '👍';
+    }
+
+    .pricing{
+        align-items: flex-end;
+        flex-wrap: nowrap;
+    }
+
+    .gallery, #gallery{
+        display: none;
+    }
+}
+
+@media (prefers-reduced-motion){
+    #logo{
+      animation: none;
+}
