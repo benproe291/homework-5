@@ -1,3 +1,5 @@
+/* Sets the logo w/ animation that is defined in the next @keyframes element */
+
 #logo{
     width: 475px;
     animation: load 5s;
@@ -10,6 +12,7 @@
     opacity: 100%;}
 }
 
+/* Setting the baseline format for all views, starting with Mobile */
 body{
     font-family: poppins, sans-serif, serif;
     background-color: #f1f1f1;
@@ -21,7 +24,7 @@ header{
     flex-direction: column;
     align-items: center;
 }
-
+/* Using this to ensure that the color of the visited links is the same as the unvisited links */
 li:visited{
     color: inherit;
 }
@@ -62,7 +65,7 @@ li:visited{
     margin: 10px;
     width: 300px;
 }
-
+/* Creating the media query for screen size > 900px */
 @media screen and (min-width: 900px){
     body > header{
         position: sticky;
@@ -86,6 +89,7 @@ li:visited{
     
 }
 
+/* Creating the media query for print view */
 @media print{
     body{
         font-family: Arial, Helvetica;
@@ -99,7 +103,7 @@ li:visited{
         flex-basis: 325px;
         border: #45ADDD solid 2px;
     }
-
+    /* Adding in the emoji to the card class */
     .card>ul>li:nth-child(2)::after{
         content: '👍';
     }
@@ -114,6 +118,7 @@ li:visited{
     }
 }
 
+/* Media query to set prefer-reduced-motion and halt the logo animation on load in */
 @media (prefers-reduced-motion){
     #logo{
       animation: none;
